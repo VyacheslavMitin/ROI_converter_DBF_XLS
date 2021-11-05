@@ -1,9 +1,6 @@
 # Модуль работы для чтения DBF файла и поготовки таблицы в экселе
 # Установить: pysimplegui, xlwt, dbfread, openpyxl
 import PySimpleGUI as sg
-import xlwt
-import dbfread
-import openpyxl
 
 layout = [
     [sg.Text('Необходимо выбрать три файла DBF по подразделениям')],
