@@ -1,18 +1,18 @@
 import os
 import glob
 import sys
-import read_dbfs
+from main import DIR_XLSX
 
-XLSX_DIR = os.path.join('xlsx')
-os.chdir(XLSX_DIR)
-print(os.getcwd())
 
-files = glob.glob('*')
-print(files)
-if files:
-    print('Удаляю файлы')
-    for file in files:
-        os.remove(file)
+def cleaning_dir_xlsx():
+    # os.chdir(DIR_XLSX)
 
-if glob.glob('*'):
-    sys.exit('Ошибка: не все файлы удалены!')
+    removing_files = glob.glob(DIR_XLSX + '//' + '*')
+
+    if removing_files:
+        print(f'Удаляю файлы из {DIR_XLSX}')
+        for file in removing_files:
+            os.remove(file)
+
+    if glob.glob(DIR_XLSX + '//' + '*'):
+        sys.exit('Ошибка: не все файлы удалены!')
