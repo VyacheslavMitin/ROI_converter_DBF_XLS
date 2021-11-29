@@ -15,3 +15,5 @@ def dbfs_append() -> list:
         DBF_TABLES.append(dbfs_read(tables))
     return DBF_TABLES
 
+
+# print(dbfs_append())

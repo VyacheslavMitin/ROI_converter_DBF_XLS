@@ -3,6 +3,7 @@ import os
 import glob
 import sys
 from main import DIR_DBFS
+
 # MONTHS_DICT = {
 #     '01.dbf': 'Январь',
 #     '02.dbf': 'Февраль',
@@ -21,6 +22,11 @@ from main import DIR_DBFS
 
 def checking_dbfs() -> list:
     os.chdir(DIR_DBFS)
+    dbfs_files_lower = glob.glob('*.DBF')
+    if dbfs_files_lower:
+        for files in dbfs_files_lower:
+            file, _ = dbfs_files_lower[0].split('.')
+            os.rename(files, f'{file}.dbf')
     dbfs_files = glob.glob('*.dbf')
     dbfs_files.sort()
 
@@ -49,3 +55,6 @@ def checking_dbfs() -> list:
         sys.exit('Ошибка: месяца не совпадают!')
 
     return dbfs_files
+
+
+# checking_dbfs()

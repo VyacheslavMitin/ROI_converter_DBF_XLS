@@ -3,9 +3,15 @@
 import os
 import sys
 
+
 PATH_MODULE: str = os.path.abspath(os.path.dirname(__file__))
 DIR_DBFS: str = os.path.join(PATH_MODULE, 'dbfs')
 DIR_XLSX: str = os.path.join(PATH_MODULE, 'xlsx')
 
+try:
+    os.mkdir(DIR_DBFS)
+    os.mkdir(DIR_XLSX)
+except FileExistsError:
+    pass
 
 

@@ -5,7 +5,6 @@ from main import DIR_XLSX
 
 
 def cleaning_dir_xlsx():
-    # os.chdir(DIR_XLSX)
 
     removing_files = glob.glob(DIR_XLSX + '//' + '*')
 
